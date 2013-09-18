@@ -34,6 +34,18 @@ end
 
 # haml for mark-up
 gem 'haml'
+
+# bootstrap
+gem 'bootstrap-sass'
+# activeadmin to make things pretty
+# gem 'activeadmin'
+
+# activerecord is needed for activeadmin i guess
+# gem 'activerecord'
+
+# activeadmin needs metaresearch
+#gem "meta_search",    '>= 1.1.0.pre'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
