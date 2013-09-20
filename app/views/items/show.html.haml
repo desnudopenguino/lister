@@ -1,14 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @item.name %>
-</p>
-
-<p>
-  <strong>List:</strong>
-  <%= @item.list_id %>
-</p>
-
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+%p
+  %strong Name:
+  = @item.name
+%p
+  %strong List
+  = @item.list.name
+%p
+  = link_to 'Edit', edit_item_path(@item)
+  = link_to 'Items', items_path
