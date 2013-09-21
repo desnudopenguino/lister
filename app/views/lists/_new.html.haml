@@ -3,9 +3,5 @@
     %button{ :type => "button", :class => "close", "data-dismiss" => "modal", "aria-hidden" => "true" }
       &times;
     %h3.newListLabel New List 
-  .modal-body
-    - @list = @newList
-    = render 'form'
-  .modal-footer
-    %button.btn{ :href => "#", "data-dismiss" => "modal", "aria-hidden" => "true" } Close
-    %button.btn.btn-primary{ :href => "#" } Save Changes
+  - @list = @newList
+  = render 'form'
