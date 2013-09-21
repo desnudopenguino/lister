@@ -4,10 +4,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    if(params.has_key?(:list_id))
       @items = List.find(params[:list_id]).items
-    else
-      @items = Item.all
     end
   end
 
