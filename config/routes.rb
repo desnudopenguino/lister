@@ -1,5 +1,5 @@
 Lister::Application.routes.draw do
-  resources :items, only: [ :index, :show ]
+  resources :items, only: [ :show ]
 
   resources :lists do
     resources :items
