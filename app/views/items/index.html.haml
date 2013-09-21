@@ -1,11 +1,11 @@
 %h1
+  = @list.name
   Items
   %a.btn.btn-primary{ :title => 'New Item', :href => "#newItem", :role => "button", "data-toggle" => "modal" }
     %i{ :class => "icon-plus-sign icon-white" }
 %table{:class => "table table-striped"}
   %thead
     %tr
-      %th List
       %th Name
       %th
       %th
@@ -13,7 +13,6 @@
   %tbody
   - @items.each do |item|
     %tr
-      %td= item.list.name
       %td= item.name
       %td= link_to 'Show', item
       %td= link_to 'Edit', edit_item_path(item)
