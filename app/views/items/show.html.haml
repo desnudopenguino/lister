@@ -1,9 +1,5 @@
-%p
-  %strong Name:
+%h1
   = @item.name
-%p
-  %strong List
-  = @item.list.name
-%p
-  = link_to 'Edit', edit_item_path(@item)
-  = link_to 'Items', items_path
+  %a.btn.btn-primary{ :title => "Edit Item", :href => "#editItem", :role => "button", "data-toggle" => "modal" }
+    %i.icon-edit.icon-white
+= render 'edit'
