@@ -1,0 +1,6 @@
+#editItem.modal.hide.fade{ :tabindex => "-1", :role => "dialog", "aria-labelledby" => "editItemLabel", "aria-hidden" => "true" }
+  .modal-header
+    %button{ :type => "button", :class => "close", "data-dismiss" => "modal", "aria-hidden" => "true" }
+      &times;
+    %h3.editItemLabel Edit Item
+  = render 'form'
