@@ -1,6 +1,6 @@
 %h1
   Items
-  %a.btn.btn-primary{ :title => 'New Item', :class => "btn btn-primary", :href => "#newItem", :role => "button", "data-toggel" => "modal" }
+  %a.btn.btn-primary{ :title => 'New Item', :href => "#newItem", :role => "button", "data-toggle" => "modal" }
     %i{ :class => "icon-plus-sign icon-white" }
 %table{:class => "table table-striped"}
   %thead
@@ -18,3 +18,4 @@
       %td= link_to 'Show', item
       %td= link_to 'Edit', edit_item_path(item)
       %td= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }      
+= render 'new'

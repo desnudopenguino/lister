@@ -4,7 +4,13 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
+    if(params.has_key?(:list_id))
       @items = List.find(params[:list_id]).items
+      @list = List.find(1)
+    else
+      @items = Item.all
+    end
+    @newItem = Item.new
   end
 
   # GET /items/1

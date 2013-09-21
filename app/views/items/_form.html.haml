@@ -1,6 +1,8 @@
 = form_for([@list, @item]) do |f|
-  .field
-    = f.label :name
-    = f.text_field :name
-  .actions
-    = f.submit
+  .modal-body
+    .field
+      = f.label :name
+      = f.text_field :name
+  .modal-footer
+    %button.btn{ "data-dismiss" => "modal", "aria-hidden" => "true"} Close
+    %button.btn.btn-primary{ :type => :submit } Save
