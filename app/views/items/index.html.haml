@@ -1,4 +1,7 @@
-%h1 Items
+%h1
+  Items
+  %a{ :title => 'New Item', :class => "btn", :href => new_item_path }
+    %i{ :class => "icon-plus-sign" }
 %table{:class => "table table-striped"}
   %thead
     %tr
@@ -15,4 +18,3 @@
       %td= link_to 'Show', item
       %td= link_to 'Edit', edit_item_path(item)
       %td= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }      
-%p= link_to 'New Item', new_item_path
