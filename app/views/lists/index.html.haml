@@ -1,6 +1,6 @@
 %h1 
   Lists
-  %a{ :title => 'New List', :class => "btn btn-primary", :href => new_list_path }
+  %a.btn.btn-primary{ :title => 'New List', :href => "#myModal", :role => "button", "data-toggle" => "modal" }
     %i{ :class => "icon-plus-sign icon-white" }
 %table{ :class => "table table-striped" }
   %thead
@@ -16,3 +16,4 @@
       %td= link_to 'Show', list
       %td= link_to 'Edit', edit_list_path(list)
       %td= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' }
+= render "new"
