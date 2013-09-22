@@ -1,17 +1,22 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-
+  add_crumb "Lists", :lists_path
   # GET /items
   # GET /items.json
   def index
     @list = List.find(params[:list_id])
     @items = @list.items
     @newItem = Item.new
+    add_crumb @list.name, list_path(@list) 
+    add_crumb "Items", list_items_path(@list)
   end
 
   # GET /items/1
   # GET /items/1.json
   def show
+    add_crumb @item.list.name, list_path(@item.list) 
+    add_crumb "Items", list_items_path(@item.list)
+    add_crumb @item.name, item_path(@item)
   end
 
   # GET /items/new
@@ -58,9 +63,10 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
+    @list = @item.list
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to items_url }
+      format.html { redirect_to list_items_url(@list) }
       format.json { head :no_content }
     end
   end
