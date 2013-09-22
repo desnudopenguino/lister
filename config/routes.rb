@@ -1,8 +1,8 @@
 Lister::Application.routes.draw do
-  resources :items, only: [ :show, :edit, :destroy ]
+  resources :items, only: [ :show, :edit, :destroy, :update ]
 
-  resources :lists do
-    resources :items, only: [ :index, :create, :update ]
+  resources :lists do , only: [ :index, :edit, :show, :destroy, :update, :create ]
+    resources :items, only: [ :index, :create ]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
