@@ -37,6 +37,10 @@ gem 'haml'
 
 # bootstrap
 gem 'bootstrap-sass'
+
+# crummy breadcrumb 
+gem 'crummy'
+
 # activeadmin to make things pretty
 # gem 'activeadmin'
 
@@ -56,4 +60,4 @@ gem 'bootstrap-sass'
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
