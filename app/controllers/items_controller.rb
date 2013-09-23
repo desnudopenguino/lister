@@ -15,7 +15,6 @@ class ItemsController < ApplicationController
   # GET /items/1.json
   def show
     add_crumb @item.list.name, list_path(@item.list) 
-    add_crumb "Items", list_items_path(@item.list)
     add_crumb @item.name, item_path(@item)
   end
 
@@ -37,7 +36,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to list_items_path(@list), notice: 'Item was successfully created.' }
+        format.html { redirect_to list_path(@list), notice: 'Item was successfully created.' }
         format.json { render action: 'show', status: :created, location: @item }
       else
         format.html { render action: 'new' }
