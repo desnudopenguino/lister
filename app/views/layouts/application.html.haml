@@ -10,5 +10,5 @@
       .navbar.navbar-inverse
         .navbar-inner
           .container
-            = render_crumbs
+            = render_crumbs format: :html_list, :ul_class => "nav"
       = yield
