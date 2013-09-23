@@ -4,5 +4,5 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   # add root crumb
-  add_crumb "Home", '/'
+  add_crumb "Lister", '/'
 end
