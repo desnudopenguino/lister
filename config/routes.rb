@@ -1,7 +1,7 @@
 Lister::Application.routes.draw do
   resources :items, only: [ :show, :edit, :destroy, :update ]
 
-  resources :lists do , only: [ :index, :edit, :show, :destroy, :update, :create ]
+  resources :lists, only: [ :index, :edit, :show, :destroy, :update, :create ] do
     resources :items, only: [ :index, :create ]
   end
 
