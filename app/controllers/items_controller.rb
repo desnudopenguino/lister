@@ -1,15 +1,16 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  #before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :update, :destroy]
   add_crumb "Lists", :lists_path
   # GET /items
   # GET /items.json
-  def index
-    @list = List.find(params[:list_id])
-    @items = @list.items
-    @newItem = Item.new
-    add_crumb @list.name, list_path(@list) 
-    add_crumb "Items", list_items_path(@list)
-  end
+  #def index
+  #  @list = List.find(params[:list_id])
+  #  @items = @list.items
+  #  @newItem = Item.new
+  #  add_crumb @list.name, list_path(@list) 
+  #  add_crumb "Items", list_items_path(@list)
+  #end
 
   # GET /items/1
   # GET /items/1.json
@@ -19,13 +20,13 @@ class ItemsController < ApplicationController
   end
 
   # GET /items/new
-  def new
-    @item = Item.new
-  end
+  #def new
+  #  @item = Item.new
+  #end
 
   # GET /items/1/edit
-  def edit
-  end
+  #def edit
+  #end
 
   # POST /items
   # POST /items.json
