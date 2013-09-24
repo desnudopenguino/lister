@@ -1,5 +1,4 @@
 class ListsController < ApplicationController
-  #before_action :set_list, only: [:show, :edit, :update, :destroy]
   before_action :set_list, only: [:show, :update, :destroy]
   add_crumb "Lists", :lists_path
 
@@ -17,15 +16,6 @@ class ListsController < ApplicationController
     @items = @list.items
     @newItem = Item.new
   end
-
-  # GET /lists/new
-  #def new
-  #  @list = List.new
-  #end
-
-  # GET /lists/1/edit
-  #def edit
-  #end
 
   # POST /lists
   # POST /lists.json
