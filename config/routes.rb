@@ -1,9 +1,15 @@
 Lister::Application.routes.draw do
+  get "error/404"
+  get "main/index"
   resources :items, only: [ :show, :edit, :destroy, :update ]
 
-  resources :lists, only: [ :index, :edit, :show, :destroy, :update, :create ] do
+  # resources :lists, only: [ :index, :edit, :show, :destroy, :update, :create ] do
+  resources :lists, only: [ :index, :show, :destroy, :update, :create ] do
     resources :items, only: [ :create ]
   end
+
+  # main#index is the homepage
+  root to: "main#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
