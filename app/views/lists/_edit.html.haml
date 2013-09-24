@@ -1,6 +1,13 @@
-#editList.modal.hide.fade{ :tabindex => "-1", :role => "dialog", "aria-labelledby" => "editListLabel", "aria-hidden" => "true" }
+.modal.hide.fade{ :tabindex => "-1", :role => "dialog", "aria-labelledby" => "editListLabel", "aria-hidden" => "true", :id => "edit_" + dom_id(list) }
   .modal-header
     %button{ :type => "button", :class => "close", "data-dismiss" => "modal", "aria-hidden" => "true" }
       &times;
     %h3.editListLabel Edit List 
-  = render 'form'
+  = form_for(list) do |f|
+    .modal-body
+      .field
+        = f.label :name
+        = f.text_field :name
+    .modal-footer
+      %button.btn{ "data-dismiss" => "modal", "aria-hidden" => "true"} Close
+      %button.btn.btn-primary{ :type => :submit } Save
