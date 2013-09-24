@@ -65,7 +65,7 @@ class ItemsController < ApplicationController
     @list = @item.list
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to list_items_url(@list) }
+      format.html { redirect_to list_url(@list) }
       format.json { head :no_content }
     end
   end
