@@ -1,5 +1,5 @@
 %h1
   = @item.name
-  %a.btn.btn-primary{ :title => "Edit Item", :href => "#editItem", :role => "button", "data-toggle" => "modal" }
+  %a.btn.btn-primary{ :title => "Edit Item", :href => "#edit_" + dom_id(@item), :role => "button", "data-toggle" => "modal" }
     %i.icon-edit.icon-white
-= render 'edit'
+= render :partial =>'edit', :locals => { :item => @item }
