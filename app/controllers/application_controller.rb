@@ -5,4 +5,15 @@ class ApplicationController < ActionController::Base
 
   # add root crumb
   add_crumb "Lister", '/'
+
+  # rescue from 404 errors
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+
+  private
+  
+  def record_not_found
+    # render text: "404 Not Found Sucka!", status: 404
+    render 'error/404', status: 404
+  end
+
 end
