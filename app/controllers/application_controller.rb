@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   # add root crumb
-  add_crumb "Lister", '/'
+  add_crumb "Home", '/'
 
   # rescue from 404 errors
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   
   def not_found
     # render text: "404 Not Found Sucka!", status: 404
-    render 'error/404', status: 404
+    render 'error/not_found_404', status: 404
   end
 
 end

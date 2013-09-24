@@ -1,4 +1,5 @@
 class ErrorController < ApplicationController
-  def 404
+  def not_found_404
+    
   end
 end
