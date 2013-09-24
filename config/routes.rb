@@ -1,9 +1,8 @@
 Lister::Application.routes.draw do
   get "error/404"
   get "main/index"
-  resources :items, only: [ :show, :edit, :destroy, :update ]
+  resources :items, only: [ :show, :destroy, :update ]
 
-  # resources :lists, only: [ :index, :edit, :show, :destroy, :update, :create ] do
   resources :lists, only: [ :index, :show, :destroy, :update, :create ] do
     resources :items, only: [ :create ]
   end
