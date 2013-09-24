@@ -1,7 +1,13 @@
-#newList.modal.hide.fade{ :tabindex => "-1", :role => "dialog", "aria-labelledby" => "newListLabel", "aria-hidden" => "true" }
+.modal.hide.fade{ :tabindex => "-1", :role => "dialog", "aria-labelledby" => "newListLabel", "aria-hidden" => "true", :id => dom_id(@newList) }
   .modal-header
     %button{ :type => "button", :class => "close", "data-dismiss" => "modal", "aria-hidden" => "true" }
       &times;
     %h3.newListLabel New List 
-  - @list = @newList
-  = render 'form'
+  = form_for(@newList) do |f|
+    .modal-body
+      .field
+        = f.label :name
+        = f.text_field :name
+    .modal-footer
+      %button.btn{ "data-dismiss" => "modal", "aria-hidden" => "true"} Close
+      %button.btn.btn-primary{ :type => :submit } Save
