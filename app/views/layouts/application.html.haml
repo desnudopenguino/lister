@@ -3,12 +3,14 @@
   %head
     %title Lister
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag "application", 'http://fonts.googleapis.com/css?family=Courgette'
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
     #content.container
       .navbar.navbar-inverse
         .navbar-inner
+          = link_to "Lister", :root, :class => "brand"
           .container
             = render_crumbs format: :html_list, :ul_class => "nav"
       = yield
