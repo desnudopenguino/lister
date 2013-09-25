@@ -2,7 +2,7 @@
   = @list.name
   %a.btn.btn-primary{ :title => "Edit List", :href => "#edit_" + dom_id(@list), :role => "button", "data-toggle" => "modal" }
     %i.icon-edit.icon-white
-  %a.btn.btn-primary{ :title => 'Add New Item', :href => "#newItem", :role => "button", "data-toggle" => "modal" }
+  %a.btn.btn-primary{ :title => 'Add New Item', :href => "#" + dom_id(@newItem), :role => "button", "data-toggle" => "modal" }
     %i.icon-plus-sign.icon-white
 = render "items/index"
 = render :partial => 'lists/edit', :locals => { :list => @list }
