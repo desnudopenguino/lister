@@ -1,8 +1,13 @@
 %h1 Welcome!
+.row
+  .span6
+    %p This is a simple list web app.  It lets you quickly create lists.  That is all
 
-%p This is a simple list web app.  It lets you quickly create lists.  That is all
-
-%p 
-  Check out the 
-  = link_to "Lists", lists_path
-
+    %p 
+      Check out the 
+      = link_to "Lists", lists_path
+  .span6
+    %h2 Newest Lists
+    %ul
+      - @newLists.each do |list|
+        %li= link_to list.name, list
