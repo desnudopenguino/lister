@@ -8,6 +8,6 @@
       = link_to "Lists", lists_path
   .span6
     %h2 Newest Lists
-    %ul
+    %ul.nav.nav-pills.nav-stacked
       - @newLists.each do |list|
         %li= link_to list.name, list
