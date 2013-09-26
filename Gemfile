@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use sqlite3 or pg as the database for Active Record
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -27,10 +27,10 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-group :doc do
+#group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
+#  gem 'sdoc', require: false
+#end
 
 # haml for mark-up
 gem 'haml'
@@ -40,6 +40,9 @@ gem 'bootstrap-sass'
 
 # crummy breadcrumb 
 gem 'crummy'
+
+# needed for heroku
+gem 'rails_12factor', group: :production
 
 # activeadmin to make things pretty
 # gem 'activeadmin'
@@ -60,4 +63,4 @@ gem 'crummy'
 # gem 'capistrano', group: :development
 
 # Use debugger
-gem 'debugger', group: [:development, :test]
+# gem 'debugger', group: [:development, :test]
