@@ -1,4 +1,5 @@
 Lister::Application.routes.draw do
+  devise_for :users
   get "error/404"
   get "main/index"
   resources :items, only: [ :show, :destroy, :update ]

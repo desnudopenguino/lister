@@ -7,6 +7,7 @@ gem 'rails', '4.0.0'
 
 # Use sqlite3 or pg as the database for Active Record
 gem 'pg'
+#gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -45,6 +46,9 @@ gem 'crummy'
 
 # needed for heroku
 gem 'rails_12factor', group: :production
+
+# devise for user auth
+gem 'devise'
 
 # activeadmin to make things pretty
 # gem 'activeadmin'
