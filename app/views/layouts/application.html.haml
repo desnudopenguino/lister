@@ -15,7 +15,9 @@
             = render_crumbs format: :html_list, :ul_class => "nav"
             %ul.nav.pull-right
               - if user_signed_in?
-                %li= link_to current_user.email, edit_user_registration_path 
+                %li
+                  = link_to edit_user_registration_path do
+                    %i.icon-user.icon-white
                 %li= link_to "Sign out", destroy_user_session_path, :method => :delete
               - else
                 %li= link_to "Sign in", new_user_session_path
