@@ -8,6 +8,9 @@ Lister::Application.routes.draw do
     resources :items, only: [ :create ]
   end
 
+  resources :users, only: [ :show ] do
+    resources :lists, only: [ :create, :index ]
+  end
   # main#index is the homepage
   root to: "main#index"
 
