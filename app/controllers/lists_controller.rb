@@ -21,6 +21,9 @@ class ListsController < ApplicationController
   # POST /lists.json
   def create
     @list = List.new(list_params)
+    if(user_signed_in?)
+      @list.user = current_user
+    end
 
     respond_to do |format|
       if @list.save
