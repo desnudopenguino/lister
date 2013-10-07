@@ -20,5 +20,10 @@
                     %i.icon-user.icon-white
                 %li= link_to "Sign out", destroy_user_session_path, :method => :delete
               - else
-                %li= link_to "Sign in", new_user_session_path
+                -# %li= link_to "Sign in", new_user_session_path
+                %li
+                  %a{ :title => "Sign in", :href => "#sign-in", :role => "button", "data-toggle" => "modal" } Sign in
+                 
       = yield
+
+    = render "devise/sessions/new"
