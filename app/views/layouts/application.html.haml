@@ -16,13 +16,22 @@
             %ul.nav.pull-right
               - if user_signed_in?
                 %li
-                  = link_to edit_user_registration_path do
-                    %i.icon-user.icon-white
-                %li= link_to "Sign out", destroy_user_session_path, :method => :delete
+                  %a.dropdown-toggle{ :href => "#", "data-toggle" => "dropdown"}
+                    %i.icon-cog.icon-white
+                    %b.caret
+                  %ul.dropdown-menu
+                    %li
+                      = link_to edit_user_registration_path do
+                        %i.icon-user
+                        Account Settings
+                    %li
+                      = link_to destroy_user_session_path, :method => :delete, :title => "Sign out" do
+                        %i.icon-off
+                        Sign Out
               - else
-                -# %li= link_to "Sign in", new_user_session_path
                 %li
-                  %a{ :title => "Sign in", :href => "#sign-in", :role => "button", "data-toggle" => "modal" } Sign in
+                  %a{ :title => "Sign in", :href => "#sign-in", :role => "button", "data-toggle" => "modal" }
+                    %i.icon-white.icon-off
                  
       = yield
 
