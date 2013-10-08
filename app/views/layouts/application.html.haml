@@ -12,7 +12,6 @@
         .navbar-inner
           = link_to "Lister", :root, :class => "brand"
           .container
-            = render_crumbs format: :html_list, :ul_class => "nav"
             %ul.nav.pull-right
               - if user_signed_in?
                 %li
@@ -33,6 +32,7 @@
                   %a{ :title => "Sign in", :href => "#sign-in", :role => "button", "data-toggle" => "modal" }
                     %i.icon-white.icon-off
                  
+      = render_crumbs format: :html_list, :ul_class => "breadcrumb", :separator =>  ' / '
       = yield
 
     = render "devise/sessions/new"
