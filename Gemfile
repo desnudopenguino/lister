@@ -50,6 +50,9 @@ gem 'rails_12factor', group: :production
 # devise for user auth
 gem 'devise'
 
+# cancan for authorization
+gem 'cancan'
+
 # activeadmin to make things pretty
 # gem 'activeadmin'
 
