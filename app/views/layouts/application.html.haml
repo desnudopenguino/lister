@@ -15,7 +15,7 @@
             - if user_signed_in?
               %ul.nav
                 %li
-                  %a{ :title => "My Lists", :href => "#" }
+                  %a{ :title => "My Lists", :href => user_path(current_user) }
                     %i.icon-list.icon-white
                     My Lists
                 
