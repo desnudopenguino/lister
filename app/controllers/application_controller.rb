@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   rescue_from ActionController::RoutingError, with: :not_found
 
   add_crumb "Home", "/"
-  
+
   private
   
   def not_found
