@@ -12,6 +12,13 @@
         .navbar-inner
           = link_to "Lister", :root, :class => "brand"
           .container
+            - if user_signed_in?
+              %ul.nav
+                %li
+                  %a{ :title => "My Lists", :href => "#" }
+                    %i.icon-list.icon-white
+                    My Lists
+                
             %ul.nav.pull-right
               - if user_signed_in?
                 %li
