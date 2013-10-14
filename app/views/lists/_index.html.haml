@@ -1,0 +1,23 @@
+%h1 
+  Lists
+  %a.btn.btn-primary{ :title => 'New List', :href => "#" + dom_id(@newList), :role => "button", "data-toggle" => "modal" }
+    %i.icon-plus-sign.icon-white
+%table.table.table-striped.table-hover
+  %thead
+    %tr
+      %th
+      %th
+      %th
+      %th
+  %tbody
+  - @lists.each do |list|
+    %tr
+      %td= link_to list.name, list
+      %td
+        %a.btn.btn-primary.pull-right{ :title => 'Edit '+list.name, :href => "#edit_"+dom_id(list), :role => "button", "data-toggle" => "modal" }
+          %i.icon-edit.icon-white
+      %td
+        = link_to list, method: :delete, :class => "btn btn-danger pull-right", data: { confirm: 'Are you sure?' } do 
+          %i.icon-remove.icon-white
+      %td= render :partial => "lists/edit", :locals => { :list => list }
+= render "lists/new"
