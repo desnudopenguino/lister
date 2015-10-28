@@ -1,5 +1,7 @@
 == README
 
+Lister is a project I started a few years ago while I was spending some time in the hospital. The goal was to build lists of lists for no real reason, except to get better with RoR. 
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
